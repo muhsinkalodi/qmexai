@@ -3,7 +3,7 @@ import ServiceCard from '../components/ui/ServiceCard';
 import SectionHeader from '../components/ui/SectionHeader';
 import Testimonials from '../components/ui/Testimonials';
 import TechStack from '../components/ui/TechStack';
-import { Bot, Globe, Smartphone, Cloud, PieChart, Users, TrendingUp, DollarSign, Target, Rocket } from 'lucide-react';
+import { Bot, Globe, Smartphone, PieChart, Users, TrendingUp, DollarSign, Target, Rocket, Megaphone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Home = () => {
@@ -27,9 +27,9 @@ const Home = () => {
             link: "/services"
         },
         {
-            icon: Cloud,
-            title: "Cloud Computing",
-            description: "Scalable cloud infrastructure and migration services to ensure your business is always online and secure.",
+            icon: Megaphone,
+            title: "Digital Marketing",
+            description: "Data-driven marketing strategies to increase your online visibility, drive traffic, and boost conversions.",
             link: "/services"
         }
     ];

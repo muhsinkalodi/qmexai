@@ -53,26 +53,32 @@ const Contact = () => {
                     {/* Contact Form */}
                     <div className="p-10">
                         <h3 className="text-2xl font-bold text-slate-800 mb-6">Send us a Message</h3>
-                        <form className="space-y-6">
+                        <form action="https://formsubmit.co/qmex@gmail.com" method="POST" className="space-y-6">
+                            {/* FormSubmit Configuration */}
+                            <input type="hidden" name="_captcha" value="false" />
+                            <input type="hidden" name="_next" value="https://qmexai.com/contact" />
+                            <input type="hidden" name="_subject" value="New Qmexai Contact Form Submission!" />
+                            <input type="hidden" name="_template" value="table" />
+
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-2">First Name</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="John" />
+                                    <input type="text" name="first_name" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="John" required />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-2">Last Name</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="Doe" />
+                                    <input type="text" name="last_name" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="Doe" required />
                                 </div>
                             </div>
 
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                                <input type="email" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="john@example.com" />
+                                <input type="email" name="email" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="john@example.com" required />
                             </div>
 
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                                <textarea rows="4" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="Tell us about your project..."></textarea>
+                                <textarea name="message" rows="4" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="Tell us about your project..." required></textarea>
                             </div>
 
                             <button type="submit" className="w-full bg-accent text-white font-bold py-4 rounded-lg hover:bg-blue-600 transition-colors shadow-lg flex items-center justify-center">
