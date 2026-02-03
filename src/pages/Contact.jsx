@@ -32,7 +32,9 @@ const Contact = () => {
                 },
                 body: JSON.stringify({
                     ...formState,
-                    _subject: "New Qmexai Contact Form Submission!"
+                    _subject: "New Qmexai Contact Form Submission!",
+                    _template: "table",
+                    _captcha: "false"
                 })
             });
 
