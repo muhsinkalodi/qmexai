@@ -73,7 +73,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <p className="font-semibold text-lg">Our Location</p>
-                                    <p className="text-slate-300 mt-1">123 Tech Avenue, Suite 500<br />Silicon Valley, CA 94043</p>
+                                    <p className="text-slate-300 mt-1">Old NH66 Thrissur road, <br /> Kottakkal, Malappuram, Kerala, India</p>
                                 </div>
                             </div>
 
@@ -93,7 +93,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <p className="font-semibold text-lg">Call Us</p>
-                                    <p className="text-slate-300 mt-1">+1 (555) 123-4567<br />Mon-Fri, 9am - 6pm EST</p>
+                                    <p className="text-slate-300 mt-1">+91  859 0456 430<br />Mon-Sat, 9am - 6pm IST</p>
                                 </div>
                             </div>
                         </div>
