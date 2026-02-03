@@ -53,7 +53,7 @@ const Contact = () => {
                     {/* Contact Form */}
                     <div className="p-10">
                         <h3 className="text-2xl font-bold text-slate-800 mb-6">Send us a Message</h3>
-                        <form action="https://formsubmit.co/qmex@gmail.com" method="POST" className="space-y-6">
+                        <form action="https://formsubmit.co/dacc14491@gmail.com" method="POST" className="space-y-6">
                             {/* FormSubmit Configuration */}
                             <input type="hidden" name="_captcha" value="false" />
                             <input type="hidden" name="_next" value="https://qmexai.com/contact" />
