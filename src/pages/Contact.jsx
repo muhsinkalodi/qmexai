@@ -68,8 +68,8 @@ const Contact = () => {
                         <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
                         <div className="space-y-8">
                             <div className="flex items-start space-x-4">
-                                <div className="p-3 bg-white/10 rounded-lg">
-                                    <MapPin className="w-6 h-6 text-accent" />
+                                <div className="p-3 bg-white rounded-lg">
+                                    <MapPin className="w-6 h-6 text-primary" />
                                 </div>
                                 <div>
                                     <p className="font-semibold text-lg">Our Location</p>
@@ -78,8 +78,8 @@ const Contact = () => {
                             </div>
 
                             <div className="flex items-start space-x-4">
-                                <div className="p-3 bg-white/10 rounded-lg">
-                                    <Mail className="w-6 h-6 text-accent" />
+                                <div className="p-3 bg-white rounded-lg">
+                                    <Mail className="w-6 h-6 text-primary" />
                                 </div>
                                 <div>
                                     <p className="font-semibold text-lg">Email Us</p>
@@ -88,8 +88,8 @@ const Contact = () => {
                             </div>
 
                             <div className="flex items-start space-x-4">
-                                <div className="p-3 bg-white/10 rounded-lg">
-                                    <Phone className="w-6 h-6 text-accent" />
+                                <div className="p-3 bg-white rounded-lg">
+                                    <Phone className="w-6 h-6 text-primary" />
                                 </div>
                                 <div>
                                     <p className="font-semibold text-lg">Call Us</p>

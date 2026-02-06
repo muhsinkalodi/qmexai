@@ -4,45 +4,45 @@ import Industries from '../components/ui/Industries';
 import PageHeader from '../components/layout/PageHeader';
 import TrustedServices from '../components/ui/TrustedServices';
 import VisionFeatures from '../components/ui/VisionFeatures';
-import { Bot, Globe, Smartphone, Cloud, PieChart, PenTool } from 'lucide-react';
+import { Bot, Globe, Cloud, Code2, Megaphone, PenTool } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Services = () => {
     const allServices = [
         {
             icon: Bot,
-            title: "AI Software Solutions",
-            description: "Leverage the power of Machine Learning and NLP to automate workflows, predict trends, and enhance decision-making.",
+            title: "AI Solutions & Automation",
+            description: "We design intelligent AI systems that eliminate repetitive tasks, automate workflows, and optimize operations—reducing costs while increasing speed and accuracy.",
+            link: "/contact"
+        },
+        {
+            icon: Code2,
+            title: "Custom Software Development",
+            description: "We build secure, scalable, and custom software solutions aligned precisely with your business processes—engineered for performance, reliability, and long-term growth.",
             link: "/contact"
         },
         {
             icon: Globe,
             title: "Web Development",
-            description: "Custom web applications built with React, Node.js, and modern frameworks. We ensure speed, security, and scalability.",
-            link: "/contact"
-        },
-        {
-            icon: Smartphone,
-            title: "App Development",
-            description: "Native iOS/Android and Cross-platform (Flutter/React Native) mobile apps that engage users and drive retention.",
+            description: "We develop high-performance websites and web applications that reflect brand credibility, deliver seamless user experience, and convert visitors into customers.",
             link: "/contact"
         },
         {
             icon: PenTool,
-            title: "UI/UX Design",
-            description: "User-centered design that creates intuitive, beautiful, and accessible interfaces for web and mobile products.",
+            title: "Branding & Online Presence",
+            description: "We craft strong brand identities and consistent digital presence that position businesses as credible, professional, and memorable.",
             link: "/contact"
         },
         {
             icon: Cloud,
-            title: "Cloud Computing",
-            description: "AWS/Azure/GCP setup, migration, and management. We help you leverage the cloud for flexibility and cost-efficiency.",
+            title: "Cloud Computing & DevOps",
+            description: "We design and manage scalable cloud infrastructures that ensure security, stability, and performance as your business grows.",
             link: "/contact"
         },
         {
-            icon: PieChart,
+            icon: Megaphone,
             title: "Digital Marketing",
-            description: "Data-driven marketing strategies including SEO, PPC, and Social Media Marketing to grow your brand presence.",
+            description: "We drive brand visibility, trust, and demand through performance-focused digital marketing strategies built for measurable business outcomes.",
             link: "/contact"
         }
     ];

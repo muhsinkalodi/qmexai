@@ -21,9 +21,9 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     <Link to="/" className="flex items-center space-x-2">
-                        {/* Use logo image if available, fallback to icon */}
-                        <img src="/qmexai-logo.svg" alt="Qmexai logo" className="h-10 w-auto" />
-                        <span className="text-2xl font-bold text-slate-800 ml-2">Qmexai</span>
+                        {/* Responsive logo size: Compact on mobile, impactful on desktop */}
+                        <img src="/logo.png" alt="Qmexai logo" className="h-20 md:h-40 w-auto" />
+                        <span className="text-2xl font-bold text-slate-800 ml-2"></span>
                     </Link>
 
                     {/* Desktop Menu */}

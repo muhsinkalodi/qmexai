@@ -9,60 +9,86 @@ const LoadingScreen = ({ onComplete }) => {
             setProgress(prev => {
                 if (prev >= 100) {
                     clearInterval(interval);
-                    setTimeout(onComplete, 800); // Slightly longer delay to appreciate the completion
+                    setTimeout(onComplete, 800);
                     return 100;
                 }
-                return prev + 2;
+                return prev + 1.5; // Slightly slower for smoother feel
             });
-        }, 40);
+        }, 30);
 
         return () => clearInterval(interval);
     }, [onComplete]);
 
     return (
         <motion.div
-            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-slate-950"
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white"
+            initial={{ opacity: 1 }}
             animate={{ opacity: progress === 100 ? 0 : 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
         >
-            <div className="relative flex flex-col items-center">
-                {/* Glowing Background Blob */}
-                <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-64 h-64 bg-blue-500/20 rounded-full blur-[100px] pointer-events-none"></div>
+            <div className="relative flex flex-col items-center justify-center">
+                {/* Modern Circular Loader */}
+                <div className="relative w-48 h-48 flex items-center justify-center">
+                    {/* Rotating Ring */}
+                    <motion.svg
+                        className="absolute inset-0 w-full h-full"
+                        viewBox="0 0 100 100"
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                    >
+                        <circle
+                            cx="50"
+                            cy="50"
+                            r="48"
+                            fill="none"
+                            stroke="#e2e8f0" // slate-200
+                            strokeWidth="2"
+                        />
+                        <motion.circle
+                            cx="50"
+                            cy="50"
+                            r="48"
+                            fill="none"
+                            stroke="url(#gradient)"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeDasharray="301" // 2 * pi * 48
+                            strokeDashoffset={301 - (301 * progress) / 100}
+                        />
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#2563eb" /> {/* blue-600 */}
+                                <stop offset="100%" stopColor="#06b6d4" /> {/* cyan-500 */}
+                            </linearGradient>
+                        </defs>
+                    </motion.svg>
 
-                {/* Centered Logo */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="mb-12 relative flex flex-col items-center"
-                >
-                    <motion.img
-                        src="/qmexai-logo.svg"
-                        alt="Qmexai Logo"
-                        className="w-24 h-24 mb-6 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
-                        animate={{
-                            filter: ["drop-shadow(0 0 15px rgba(59,130,246,0.5))", "drop-shadow(0 0 30px rgba(59,130,246,0.8))", "drop-shadow(0 0 15px rgba(59,130,246,0.5))"]
-                        }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                    />
-                    <div className="text-5xl font-bold text-white tracking-tighter">
-                        Qmexai<span className="text-blue-500">.</span>
-                    </div>
-                </motion.div>
-
-                {/* Modern Progress Bar */}
-                <div className="w-64 h-1.5 bg-slate-800/50 rounded-full overflow-hidden backdrop-blur-sm border border-slate-800">
+                    {/* Glowing Logo */}
                     <motion.div
-                        className="h-full bg-gradient-to-r from-blue-600 to-cyan-400 shadow-[0_0_10px_rgba(59,130,246,0.8)]"
-                        initial={{ width: "0%" }}
-                        animate={{ width: `${progress}%` }}
-                        transition={{ ease: "linear" }}
-                    />
+                        className="relative z-10 p-6"
+                        animate={{ scale: [1, 1.05, 1] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                        <img
+                            src="/logo.png"
+                            alt="Qmexai Logo"
+                            className="w-32 h-auto drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]"
+                        />
+                    </motion.div>
                 </div>
 
-                {/* Percentage Text */}
-                <div className="mt-4 text-center text-slate-500 font-mono text-xs tracking-widest opacity-80">
-                    INITIALIZING SYSTEM... {progress}%
+                {/* Percentage & Status Text */}
+                <div className="mt-8 flex flex-col items-center space-y-2">
+                    <span className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 font-outfit">
+                        {Math.round(progress)}%
+                    </span>
+                    <motion.p
+                        className="text-slate-500 text-sm font-medium tracking-[0.2em] uppercase"
+                        animate={{ opacity: [0.5, 1, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                    >
+                        Initializing Intelligence...
+                    </motion.p>
                 </div>
             </div>
         </motion.div>

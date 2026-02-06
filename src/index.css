@@ -1,8 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0f172a;
-  --color-accent: #3b82f6;
+  --color-primary: #16213C;
+  /* Override Blue Palette to use the new Brand Color (Navy #16213C) */
+  --color-blue-50: #EEF2F6;
+  /* Extremely Light Blue-Grey */
+  --color-blue-100: #DCE4EB;
+  /* Very Light */
+  --color-blue-200: #BCCDE0;
+  /* Light */
+  --color-blue-300: #94ACC9;
+  /* Medium Light */
+  --color-blue-400: #6284B3;
+  /* Medium */
+  --color-blue-500: #3E5E8E;
+  /* Medium Dark */
+  --color-blue-600: #16213C;
+  /* BRAND BASE */
+  --color-blue-700: #111A30;
+  /* Darker */
+  --color-blue-800: #0C1222;
+  /* Very Dark */
+  --color-blue-900: #060911;
+  /* Almost Black */
+
+  --color-accent: #16213C;
+  /* Update accent to match brand */
 
   --color-slate-50: #f8fafc;
   --color-slate-100: #f1f5f9;
@@ -15,16 +38,16 @@
   --color-slate-800: #1e293b;
   --color-slate-900: #0f172a;
 
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: 'Outfit', sans-serif;
 
-  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.5);
+  --shadow-glow: 0 0 20px rgba(22, 33, 60, 0.5);
 }
 
 /* Custom utilities if needed */
 body {
   background-color: var(--color-slate-50);
-  background-image: radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.05) 0px, transparent 50%);
+  background-image: radial-gradient(at 0% 0%, rgba(22, 33, 60, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(22, 33, 60, 0.05) 0px, transparent 50%);
   background-attachment: fixed;
   color: var(--color-slate-800);
   font-family: var(--font-sans);
@@ -34,4 +57,9 @@ body {
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--color-blue-600);
+  color: #ffffff;
 }

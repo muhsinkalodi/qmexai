@@ -22,12 +22,12 @@ const Hero = () => {
                         </div>
 
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight mb-6">
-                            Redefining <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Digital Excellence</span>
+                            Engineering <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Business <br /> Growth</span>
                         </h1>
 
                         <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-lg">
-                            We are Qmexai. Your partner for AI Software, Web Development, and strategic Digital Marketing. We build the future.
+                            We are Qmexai. We solve business challenges through AI-powered software, automation, and digital platforms. We optimize tasks, enhance efficiency, and elevate online presence to drive sustainable growth.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-12">
