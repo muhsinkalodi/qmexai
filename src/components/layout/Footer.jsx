@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
                     {/* Column 1: Logo (Desktop: Side-by-side with text) */}
                     <div className="flex flex-col items-start">
-                        <img src="/logo.png" alt="Qmexai logo" className="h-20 md:h-24 lg:h-40 w-auto object-contain" />
+                        <img src="/logo.png" alt="Qmexai logo" className="h-32 md:h-32 lg:h-32 w-auto object-contain" />
                     </div>
 
                     {/* Column 2: Company Info & Socials */}

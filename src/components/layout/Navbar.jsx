@@ -22,7 +22,7 @@ const Navbar = () => {
                 <div className="flex justify-between items-center h-20">
                     <Link to="/" className="flex items-center space-x-2">
                         {/* Responsive logo size: Compact on mobile, impactful on desktop */}
-                        <img src="/logo.png" alt="Qmexai logo" className="h-20 md:h-40 w-auto" />
+                        <img src="/logo.png" alt="Qmexai logo" className="h-32 md:h-40 w-auto" />
                         <span className="text-2xl font-bold text-slate-800 ml-2"></span>
                     </Link>
 
