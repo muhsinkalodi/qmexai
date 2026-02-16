@@ -18,11 +18,11 @@ const Navbar = () => {
 
     return (
         <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="w-full mx-auto px-4 sm:px-6 lg:px-16">
                 <div className="flex justify-between items-center h-20">
                     <Link to="/" className="flex items-center space-x-2">
                         {/* Responsive logo size: Compact on mobile, impactful on desktop */}
-                        <img src="/logo.png" alt="Qmexai logo" className="h-32 md:h-40 w-auto" />
+                        <img src="/logo.png" alt="Qmexai logo" className="h-12 md:h-12 w-auto" />
                         <span className="text-2xl font-bold text-slate-800 ml-2"></span>
                     </Link>
 

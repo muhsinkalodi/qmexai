@@ -1,74 +1,158 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Cpu, Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-slate-50 text-slate-900 border-t border-slate-200 pt-16 pb-8">
+        <footer className="bg-slate-50 text-slate-600 border-t border-slate-200 pt-12 pb-6 font-sans">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
-                    {/* Column 1: Logo (Desktop: Side-by-side with text) */}
-                    <div className="flex flex-col items-start">
-                        <img src="/logo.png" alt="Qmexai logo" className="h-32 md:h-32 lg:h-32 w-auto object-contain" />
-                    </div>
 
-                    {/* Column 2: Company Info & Socials */}
-                    <div>
-                        <p className="text-slate-600 mb-6 leading-relaxed">
+                {/* Main Footer Content */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-16 mb-8 items-start">
+
+                    {/* Brand Section */}
+                    <div className="lg:col-span-4 flex flex-col items-start">
+                        <Link to="/" className="inline-block mb-1">
+                            <img
+                                src="/logo.png"
+                                alt="Qmexai"
+                                className="h-20 md:h-20 w-auto object-contain"
+                            />
+                        </Link>
+
+                        <p className="text-sm leading-relaxed text-slate-500 max-w-sm mb-8">
                             Empowering businesses with cutting-edge AI software solutions, web development, and digital transformation services.
                         </p>
-                        <div className="flex space-x-4">
-                            <a href="#" className="text-slate-400 hover:text-primary transition-colors"><Linkedin size={20} /></a>
-                            <a href="#" className="text-slate-400 hover:text-primary transition-colors"><Twitter size={20} /></a>
-                            <a href="#" className="text-slate-400 hover:text-primary transition-colors"><Facebook size={20} /></a>
+
+                        {/* Social Links */}
+                        <div className="flex items-center space-x-4">
+                            {[Linkedin, Twitter, Facebook].map((Icon, index) => (
+                                <a
+                                    key={index}
+                                    href="#"
+                                    className="p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition-all duration-200"
+                                    aria-label="Social Link"
+                                >
+                                    <Icon size={18} />
+                                </a>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Column 3: Quick Links */}
-                    <div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-6">Quick Links</h3>
-                        <ul className="space-y-4">
-                            <li><Link to="/about" className="text-slate-600 hover:text-primary transition-colors">About Us</Link></li>
-                            <li><Link to="/services" className="text-slate-600 hover:text-primary transition-colors">Services</Link></li>
-                            <li><Link to="#" className="text-slate-600 hover:text-primary transition-colors">Case Studies</Link></li>
-                            <li><Link to="/contact" className="text-slate-600 hover:text-primary transition-colors">Contact</Link></li>
-                        </ul>
-                    </div>
+                    {/* Navigation Sections */}
+                    <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                    {/* Column 4: Services */}
-                    <div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-6">Services</h3>
-                        <ul className="space-y-4">
-                            <li><Link to="/services" className="text-slate-600 hover:text-primary transition-colors">AI Solutions</Link></li>
-                            <li><Link to="/services" className="text-slate-600 hover:text-primary transition-colors">Web Development</Link></li>
-                            <li><Link to="/services" className="text-slate-600 hover:text-primary transition-colors">Mobile Apps</Link></li>
-                            <li><Link to="/services" className="text-slate-600 hover:text-primary transition-colors">Digital Marketing</Link></li>
-                            <li><Link to="/services" className="text-slate-600 hover:text-primary transition-colors">Cloud Computing</Link></li>
-                        </ul>
-                    </div>
+                        {/* Company */}
+                        <div>
+                            <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wide mb-6">
+                                Company
+                            </h3>
+                            <ul className="space-y-3 text-sm">
+                                <li>
+                                    <Link to="/about" className="hover:text-slate-900 transition-colors duration-200">
+                                        About Us
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/services" className="hover:text-slate-900 transition-colors duration-200">
+                                        Services
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="#" className="hover:text-slate-900 transition-colors duration-200">
+                                        Case Studies
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/contact" className="hover:text-slate-900 transition-colors duration-200">
+                                        Contact
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
 
-                    {/* Column 5: Contact */}
-                    <div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-6">Contact Us</h3>
-                        <ul className="space-y-4">
-                            <li className="flex items-start space-x-3 text-slate-600">
-                                <MapPin size={20} className="mt-1 flex-shrink-0 text-primary" />
-                                <span>Old NH66 Thrissur road, Kottakkal, Malappuram, Kerala, India</span>
-                            </li>
-                            <li className="flex items-center space-x-3 text-slate-600">
-                                <Mail size={20} className="flex-shrink-0 text-primary" />
-                                <span>contact@qmexai.com</span>
-                            </li>
-                            <li className="flex items-center space-x-3 text-slate-600">
-                                <Phone size={20} className="flex-shrink-0 text-primary" />
-                                <span>+91 859 0456 430</span>
-                            </li>
-                        </ul>
+                        {/* Services */}
+                        <div>
+                            <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wide mb-6">
+                                Services
+                            </h3>
+                            <ul className="space-y-3 text-sm">
+                                <li>
+                                    <Link to="/services" className="hover:text-slate-900 transition-colors duration-200">
+                                        AI Solutions
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/services" className="hover:text-slate-900 transition-colors duration-200">
+                                        Web Development
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/services" className="hover:text-slate-900 transition-colors duration-200">
+                                        Mobile Apps
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/services" className="hover:text-slate-900 transition-colors duration-200">
+                                        Digital Marketing
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/services" className="hover:text-slate-900 transition-colors duration-200">
+                                        Cloud Computing
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Contact */}
+                        <div className="sm:col-span-2 lg:col-span-1">
+                            <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wide mb-6">
+                                Contact
+                            </h3>
+                            <ul className="space-y-4 text-sm">
+                                <li className="flex items-start space-x-3">
+                                    <MapPin size={18} className="mt-1 flex-shrink-0 text-slate-500" />
+                                    <span>
+                                        Old NH66 Thrissur road, Kottakkal, Malappuram, Kerala, India
+                                    </span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    <Mail size={18} className="flex-shrink-0 text-slate-500" />
+                                    <a
+                                        href="mailto:contact@qmexai.com"
+                                        className="hover:text-slate-900 transition-colors duration-200"
+                                    >
+                                        contact@qmexai.com
+                                    </a>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    <Phone size={18} className="flex-shrink-0 text-slate-500" />
+                                    <a
+                                        href="tel:+918590456430"
+                                        className="hover:text-slate-900 transition-colors duration-200"
+                                    >
+                                        +91 859 0456 430
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div className="border-t border-slate-200 pt-8 text-center text-slate-500">
+                {/* Copyright */}
+                <div className="border-t border-slate-200 pt-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-slate-400">
                     <p>&copy; {new Date().getFullYear()} Qmexai. All rights reserved.</p>
+                    <div className="flex space-x-6">
+                        <Link to="#" className="hover:text-slate-700 transition-colors duration-200">
+                            Privacy Policy
+                        </Link>
+                        <Link to="#" className="hover:text-slate-700 transition-colors duration-200">
+                            Terms of Service
+                        </Link>
+                    </div>
                 </div>
+
             </div>
         </footer>
     );
