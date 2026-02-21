@@ -32,50 +32,66 @@
 
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Qmexai",
-      "url": "https://www.qmexai.com",
-      "logo": "https://www.qmexai.com/logo.png",
-      "description": "Global provider of Web Development, AI Solutions, and Digital Marketing services.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Old NH66 Thrissur road, Kottakkal",
-        "addressLocality": "Malappuram",
-        "addressRegion": "Kerala",
-        "postalCode": "676503",
-        "addressCountry": "IN"
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Qmexai",
+        "url": "https://www.qmexai.com",
+        "logo": "https://www.qmexai.com/logo.png",
+        "description": "Global provider of Web Development, AI Solutions, and Digital Marketing services.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-859-0456-430",
+          "contactType": "customer service",
+          "email": "contact@qmexai.com",
+          "areaServed": ["IN", "AE", "SA", "KW", "QA", "US", "RU", "AR", "KR", "MY", "SG", "LK", "ZA"],
+          "availableLanguage": ["English", "Arabic", "Russian", "Spanish", "Korean", "Malay", "Tamil", "Hindi"]
+        },
+        "sameAs": [
+          "https://www.facebook.com/qmexai",
+          "https://twitter.com/qmexai",
+          "https://www.linkedin.com/company/qmexai"
+        ]
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Qmexai Headquarters",
+        "image": "https://www.qmexai.com/logo.png",
+        "url": "https://www.qmexai.com",
         "telephone": "+91-859-0456-430",
-        "contactType": "customer service",
-        "email": "contact@qmexai.com"
-      },
-      "areaServed": [
-        "India",
-        "Kerala",
-        "Chennai",
-        "Delhi",
-        "Amritsar",
-        "Ahmedabad",
-        "Pune",
-        "Mumbai",
-        "Bangalore",
-        "United Arab Emirates",
-        "Kuwait",
-        "Saudi Arabia",
-        "United States",
-        "United Kingdom",
-        "Global"
-      ],
-      "sameAs": [
-        "https://www.facebook.com/qmexai",
-        "https://twitter.com/qmexai",
-        "https://www.linkedin.com/company/qmexai"
-      ]
-    }
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Old NH66 Thrissur road, Kottakkal",
+          "addressLocality": "Malappuram",
+          "addressRegion": "Kerala",
+          "postalCode": "676503",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 11.0006,
+          "longitude": 75.9961
+        },
+        "areaServed": [
+          { "@type": "Country", "name": "India" },
+          { "@type": "Country", "name": "United Arab Emirates" },
+          { "@type": "Country", "name": "Saudi Arabia" },
+          { "@type": "Country", "name": "Qatar" },
+          { "@type": "Country", "name": "Kuwait" },
+          { "@type": "Country", "name": "Russia" },
+          { "@type": "Country", "name": "United States" },
+          { "@type": "Country", "name": "Argentina" },
+          { "@type": "Continent", "name": "Africa" },
+          { "@type": "Country", "name": "South Korea" },
+          { "@type": "Country", "name": "Malaysia" },
+          { "@type": "Country", "name": "Singapore" },
+          { "@type": "Country", "name": "Sri Lanka" }
+        ],
+        "priceRange": "$$"
+      }
+    ]
     </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

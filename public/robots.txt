@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /client-testing/
 Sitemap: https://www.qmexai.com/sitemap.xml

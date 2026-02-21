@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -20,16 +20,22 @@ const Footer = () => {
                             />
                         </Link>
 
-                        <p className="text-sm leading-relaxed text-slate-500 max-w-sm mb-8">
+                        <p className="text-sm leading-relaxed text-slate-500 max-w-sm mb-6">
                             Empowering businesses with cutting-edge AI software solutions, web development, and digital transformation services.
                         </p>
 
                         {/* Social Links */}
                         <div className="flex items-center space-x-4">
-                            {[Linkedin, Twitter, Facebook].map((Icon, index) => (
+                            {[
+                                { Icon: Instagram, href: "https://www.instagram.com/qmexai" },
+                                { Icon: Linkedin, href: "https://www.linkedin.com/company/qmexai" },
+                                { Icon: Facebook, href: "https://www.facebook.com/qmexai" }
+                            ].map(({ Icon, href }, index) => (
                                 <a
                                     key={index}
-                                    href="#"
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition-all duration-200"
                                     aria-label="Social Link"
                                 >
@@ -120,10 +126,10 @@ const Footer = () => {
                                 <li className="flex items-center space-x-3">
                                     <Mail size={18} className="flex-shrink-0 text-slate-500" />
                                     <a
-                                        href="mailto:contact@qmexai.com"
+                                        href="mailto:qmexai@gmail.com"
                                         className="hover:text-slate-900 transition-colors duration-200"
                                     >
-                                        contact@qmexai.com
+                                        qmexai@gmail.com
                                     </a>
                                 </li>
                                 <li className="flex items-center space-x-3">
