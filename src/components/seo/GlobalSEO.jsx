@@ -24,8 +24,29 @@ const GlobalSEO = () => {
     const location = useLocation();
     const currentRegion = regions[region] || regions.default;
 
-    const currentPath = location.pathname.replace(/^\/[a-z]{2}\//, '/');
+    // Clean pathname by removing trailing slash
+    const cleanPathname = location.pathname.endsWith('/') && location.pathname.length > 1
+        ? location.pathname.slice(0, -1)
+        : location.pathname;
+
+    let currentPath = cleanPathname;
+    const regionMatch = currentPath.match(/^\/([a-z]{2})(?:\/|$)/);
+
+    if (regionMatch && regions[regionMatch[1]] && regionMatch[1] !== 'default') {
+        currentPath = currentPath.substring(3);
+        if (!currentPath.startsWith('/')) {
+            currentPath = '/' + currentPath;
+        }
+    }
+
     const baseUrl = 'https://www.qmexai.com';
+    const pathSuffix = currentPath === '/' ? '' : currentPath;
+
+    // Build the resolved canonical URL for the *current* page correctly
+    const canonicalPath = region && regions[region] && region !== 'default'
+        ? `/${region}${pathSuffix}`
+        : pathSuffix;
+    const canonicalUrl = `${baseUrl}${canonicalPath}`;
 
     return (
         <Helmet>
@@ -38,24 +59,24 @@ const GlobalSEO = () => {
             <meta property="og:description" content={currentRegion.desc} />
 
             {/* Dynamic Canonical */}
-            <link rel="canonical" href={`${baseUrl}${location.pathname}`} />
+            <link rel="canonical" href={canonicalUrl} />
 
             {/* Hreflang Tags for Geographic Targeting */}
-            <link rel="alternate" hreflang="x-default" href={`${baseUrl}${currentPath}`} />
-            <link rel="alternate" hreflang="en" href={`${baseUrl}${currentPath}`} />
+            <link rel="alternate" hreflang="x-default" href={`${baseUrl}${pathSuffix}`} />
+            <link rel="alternate" hreflang="en" href={`${baseUrl}${pathSuffix}`} />
 
             {Object.entries(regions).filter(([key]) => key !== 'default').map(([key, data]) => {
-                const url = key === 'default' ? baseUrl + currentPath : `${baseUrl}/${key}${currentPath}`;
+                const url = `${baseUrl}/${key}${pathSuffix}`;
                 // Adding specific language-country variations
                 return (
                     <link key={key} rel="alternate" hreflang={data.code} href={url} />
                 );
             })}
             {/* Specific language fallbacks or alternate combinations */}
-            <link rel="alternate" hreflang="ar-ae" href={`${baseUrl}/ae${currentPath}`} />
-            <link rel="alternate" hreflang="ar-sa" href={`${baseUrl}/sa${currentPath}`} />
-            <link rel="alternate" hreflang="ar-kw" href={`${baseUrl}/kw${currentPath}`} />
-            <link rel="alternate" hreflang="ar-qa" href={`${baseUrl}/qa${currentPath}`} />
+            <link rel="alternate" hreflang="ar-ae" href={`${baseUrl}/ae${pathSuffix}`} />
+            <link rel="alternate" hreflang="ar-sa" href={`${baseUrl}/sa${pathSuffix}`} />
+            <link rel="alternate" hreflang="ar-kw" href={`${baseUrl}/kw${pathSuffix}`} />
+            <link rel="alternate" hreflang="ar-qa" href={`${baseUrl}/qa${pathSuffix}`} />
         </Helmet>
     );
 };
