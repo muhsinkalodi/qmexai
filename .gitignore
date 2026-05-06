@@ -7,24 +7,70 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+package-lock.json
+
+# Build outputs
 dist
 dist-ssr
+build
 *.local
+
+# Cache files
+.eslintcache
+.cache
+.vite
+.nuxt
+.next
+.turbo
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+*.bak
+
+# Backup and temporary files
+*.log.bak
+*.tmp
+*.temp
+*.backup
+*.swp
+*~
+logo.png~
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
+.sublime-text
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+.env
 
-# Vercel
-.vercel
+# Environment files
 .env
 .env.local
 .env.*.local
+.env.production.local
+.env.development.local
+.env.test.local
+
+# Vercel
+.vercel
+
+# IDE settings
+.vscode/settings.json
+.idea/
+
+# System files
+.DS_Store
+.AppleDouble
+.LSOverride
+ehthumbs.db

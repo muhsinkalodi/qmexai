@@ -1,32 +1,47 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #16213C;
-  /* Override Blue Palette to use the new Brand Color (Navy #16213C) */
-  --color-blue-50: #EEF2F6;
-  /* Extremely Light Blue-Grey */
-  --color-blue-100: #DCE4EB;
-  /* Very Light */
-  --color-blue-200: #BCCDE0;
-  /* Light */
-  --color-blue-300: #94ACC9;
-  /* Medium Light */
-  --color-blue-400: #6284B3;
-  /* Medium */
-  --color-blue-500: #3E5E8E;
-  /* Medium Dark */
-  --color-blue-600: #16213C;
-  /* BRAND BASE */
-  --color-blue-700: #111A30;
-  /* Darker */
-  --color-blue-800: #0C1222;
-  /* Very Dark */
-  --color-blue-900: #060911;
-  /* Almost Black */
-
-  --color-accent: #16213C;
-  /* Update accent to match brand */
-
+  /* Sophisticated Brand Colors */
+  --color-primary: #0D0B18;
+  /* Deep dark purple - for text and background */
+  --color-accent: #68992c;
+  /* Earthy green - primary accent */
+  --color-secondary: #8FBB3E;
+  /* Light green - secondary accent */
+  --color-success: #5A7A2B;
+  /* Deep green */
+  
+  /* Extended Color Palette */
+  --color-blue-50: #F0F9FF;
+  --color-blue-100: #E0F2FE;
+  --color-blue-200: #BAE6FD;
+  --color-blue-300: #7DD3FC;
+  --color-blue-400: #38BDF8;
+  --color-blue-500: #0EA5E9;
+  --color-blue-600: #0284C7;
+  --color-blue-700: #0369A1;
+  --color-blue-800: #075985;
+  --color-blue-900: #0C3B66;
+  
+  /* Vibrant gradients mapping */
+  --color-purple-400: #D8B4FE;
+  --color-purple-500: #C084FC;
+  --color-purple-600: #A855F7;
+  --color-purple-700: #9333EA;
+  
+  --color-pink-400: #F472B6;
+  --color-pink-500: #EC4899;
+  --color-pink-600: #DB2777;
+  
+  --color-cyan-400: #22D3EE;
+  --color-cyan-500: #06B6D4;
+  
+  --color-emerald-400: #34D399;
+  --color-emerald-500: #10B981;
+  
+  --color-amber-400: #FBBF24;
+  --color-amber-500: #F59E0B;
+  
   --color-slate-50: #f8fafc;
   --color-slate-100: #f1f5f9;
   --color-slate-200: #e2e8f0;
@@ -39,19 +54,206 @@
   --color-slate-900: #0f172a;
 
   --font-sans: 'Outfit', sans-serif;
-
-  --shadow-glow: 0 0 20px rgba(22, 33, 60, 0.5);
 }
 
-/* Custom utilities if needed */
+/* Modern Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(104, 153, 44, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(104, 153, 44, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation Utility Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+/* Gradient Backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, #68992c 0%, #7BA938 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #8FBB3E 0%, #A8D45E 100%);
+}
+
+.gradient-success {
+  background: linear-gradient(135deg, #5A7A2B 0%, #68992c 100%);
+}
+
+.gradient-vibrant {
+  background: linear-gradient(135deg, #68992c 0%, #8FBB3E 50%, #A8D45E 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #68992c, #8FBB3E, #A8D45E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shadow Effects */
+.shadow-glow-green {
+  box-shadow: 0 0 30px rgba(104, 153, 44, 0.3);
+}
+
+.shadow-glow-light-green {
+  box-shadow: 0 0 30px rgba(143, 187, 62, 0.3);
+}
+
+.shadow-glow-success {
+  box-shadow: 0 0 30px rgba(90, 122, 43, 0.3);
+}
+
+.shadow-elegant {
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+}
+
+/* Body and base styles */
 body {
-  background-color: var(--color-slate-50);
-  background-image: radial-gradient(at 0% 0%, rgba(22, 33, 60, 0.08) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(22, 33, 60, 0.05) 0px, transparent 50%);
-  background-attachment: fixed;
-  color: var(--color-slate-800);
-  font-family: var(--font-sans);
+  background-color: #ffffff;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
+  color: var(--color-slate-800);
 }
 
 /* Smooth scrolling for anchor links */

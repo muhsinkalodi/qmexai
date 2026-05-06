@@ -48,7 +48,7 @@ const Services = () => {
     ];
 
     return (
-        <div className="pt-20 bg-slate-50 min-h-screen">
+        <div className="pt-20 bg-white min-h-screen">
             <PageHeader
                 title="Our Services"
                 subtitle="What We Offer"

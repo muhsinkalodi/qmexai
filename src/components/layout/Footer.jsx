@@ -1,165 +1,169 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
+    const footerLinks = {
+        company: [
+            { label: 'About Us', href: '/about' },
+            { label: 'Services', href: '/services' },
+            { label: 'Case Studies', href: '#' },
+            { label: 'Contact', href: '/contact' }
+        ],
+        services: [
+            { label: 'Web Development', href: '/services' },
+            { label: 'AI Solutions', href: '/services' },
+            { label: 'Mobile Apps', href: '/services' },
+            { label: 'Digital Marketing', href: '/services' }
+        ],
+        contact: [
+            { icon: Phone, text: '+91-944-6186-430', href: 'tel:+91-944-6186-430' },
+            { icon: Mail, text: 'contact@qmexai.com', href: 'mailto:contact@qmexai.com' },
+            { icon: MapPin, text: 'Kottakkal, Malappuram, India', href: '#' }
+        ]
+    };
+
+    const socialLinks = [
+        { Icon: Instagram, href: "https://www.instagram.com/qmexai", label: "Instagram" },
+        { Icon: Linkedin, href: "https://www.linkedin.com/company/qmexai", label: "LinkedIn" },
+        { Icon: Facebook, href: "https://www.facebook.com/qmexai", label: "Facebook" }
+    ];
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
+
     return (
-        <footer className="bg-slate-50 text-slate-600 border-t border-slate-200 pt-12 pb-6 font-sans">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                {/* Main Footer Content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-16 mb-8 items-start">
-
+        <footer className="bg-white border-t border-gray-100">
+            {/* Main Footer Content */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                >
                     {/* Brand Section */}
-                    <div className="lg:col-span-4 flex flex-col items-start">
-                        <Link to="/" className="inline-block mb-1">
-                            <img
-                                src="/logo.png"
-                                alt="Qmexai"
-                                className="h-20 md:h-20 w-auto object-contain"
-                            />
+                    <motion.div variants={itemVariants} className="flex flex-col">
+                        <Link to="/" className="mb-6 inline-flex items-center gap-2 hover:scale-110 transition-transform duration-300 group">
+                            <img src="/logo.png" alt="Qmexai" className="h-12 w-auto" />
+                            <span className="text-lg font-semibold bg-linear-to-r from-green-700 via-green-600 to-green-500 bg-clip-text text-transparent tracking-widest uppercase" style={{ fontFamily: 'Gotham, -apple-system, BlinkMacSystemFont, sans-serif', fontWeight: 600, letterSpacing: '0.15em' }}>QMEXAI</span>
                         </Link>
-
-                        <p className="text-sm leading-relaxed text-slate-500 max-w-sm mb-6">
-                            Empowering businesses with cutting-edge AI software solutions, web development, and digital transformation services.
+                        <p className="text-gray-600 mb-6 leading-relaxed text-sm">
+                            Empowering global businesses with cutting-edge AI, custom software, and digital transformation solutions.
                         </p>
-
-                        {/* Social Links */}
-                        <div className="flex items-center space-x-4">
-                            {[
-                                { Icon: Instagram, href: "https://www.instagram.com/qmexai" },
-                                { Icon: Linkedin, href: "https://www.linkedin.com/company/qmexai" },
-                                { Icon: Facebook, href: "https://www.facebook.com/qmexai" }
-                            ].map(({ Icon, href }, index) => (
-                                <a
+                        <div className="flex gap-4">
+                            {socialLinks.map(({ Icon, href, label }, index) => (
+                                <motion.a
                                     key={index}
                                     href={href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition-all duration-200"
-                                    aria-label="Social Link"
+                                    whileHover={{ scale: 1.15, rotate: 10 }}
+                                    className="w-11 h-11 rounded-lg bg-linear-to-br from-green-500 to-green-600 text-white flex items-center justify-center hover:shadow-lg hover:shadow-green-600/30 transition-all duration-300"
+                                    aria-label={label}
                                 >
-                                    <Icon size={18} />
-                                </a>
+                                    <Icon size={20} />
+                                </motion.a>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
 
-                    {/* Navigation Sections */}
-                    <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                        {/* Company */}
-                        <div>
-                            <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wide mb-6">
-                                Company
-                            </h3>
-                            <ul className="space-y-3 text-sm">
-                                <li>
-                                    <Link to="/about" className="hover:text-slate-900 transition-colors duration-200">
-                                        About Us
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/services" className="hover:text-slate-900 transition-colors duration-200">
-                                        Services
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="#" className="hover:text-slate-900 transition-colors duration-200">
-                                        Case Studies
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/contact" className="hover:text-slate-900 transition-colors duration-200">
-                                        Contact
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-
-                        {/* Services */}
-                        <div>
-                            <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wide mb-6">
-                                Services
-                            </h3>
-                            <ul className="space-y-3 text-sm">
-                                <li>
-                                    <Link to="/services" className="hover:text-slate-900 transition-colors duration-200">
-                                        AI Solutions
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/services" className="hover:text-slate-900 transition-colors duration-200">
-                                        Web Development
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/services" className="hover:text-slate-900 transition-colors duration-200">
-                                        Mobile Apps
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/services" className="hover:text-slate-900 transition-colors duration-200">
-                                        Digital Marketing
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/services" className="hover:text-slate-900 transition-colors duration-200">
-                                        Cloud Computing
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-
-                        {/* Contact */}
-                        <div className="sm:col-span-2 lg:col-span-1">
-                            <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wide mb-6">
-                                Contact
-                            </h3>
-                            <ul className="space-y-4 text-sm">
-                                <li className="flex items-start space-x-3">
-                                    <MapPin size={18} className="mt-1 flex-shrink-0 text-slate-500" />
-                                    <span>
-                                        Old NH66 Thrissur road, Kottakkal, Malappuram, Kerala, India
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-3">
-                                    <Mail size={18} className="flex-shrink-0 text-slate-500" />
-                                    <a
-                                        href="mailto:qmexai@gmail.com"
-                                        className="hover:text-slate-900 transition-colors duration-200"
+                    {/* Company Links */}
+                    <motion.div variants={itemVariants}>
+                        <h4 className="text-lg font-bold text-gray-900 mb-6">Company</h4>
+                        <ul className="space-y-3">
+                            {footerLinks.company.map((link, i) => (
+                                <li key={i}>
+                                    <Link
+                                        to={link.href}
+                                        className="text-gray-600 hover:text-transparent hover:bg-linear-to-r hover:from-green-600 hover:to-green-700 hover:bg-clip-text transition-all duration-300 font-medium text-sm flex items-center group"
                                     >
-                                        qmexai@gmail.com
+                                        {link.label}
+                                        <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
+
+                    {/* Services Links */}
+                    <motion.div variants={itemVariants}>
+                        <h4 className="text-lg font-bold text-gray-900 mb-6">Services</h4>
+                        <ul className="space-y-3">
+                            {footerLinks.services.map((link, i) => (
+                                <li key={i}>
+                                    <Link
+                                        to={link.href}
+                                        className="text-gray-600 hover:text-transparent hover:bg-linear-to-r hover:from-green-600 hover:to-green-700 hover:bg-clip-text transition-all duration-300 font-medium text-sm flex items-center group"
+                                    >
+                                        {link.label}
+                                        <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
+
+                    {/* Contact Section */}
+                    <motion.div variants={itemVariants}>
+                        <h4 className="text-lg font-bold text-gray-900 mb-6">Contact</h4>
+                        <ul className="space-y-4">
+                            {footerLinks.contact.map((item, i) => (
+                                <li key={i}>
+                                    <a
+                                        href={item.href}
+                                        className="flex items-start gap-3 text-gray-600 hover:text-gray-900 transition-colors duration-300 group"
+                                    >
+                                        <div className="w-10 h-10 rounded-lg bg-linear-to-br from-green-500 to-green-600 text-white flex items-center justify-center shrink-0 group-hover:shadow-lg group-hover:shadow-green-600/30 transition-all">
+                                            <item.icon size={18} />
+                                        </div>
+                                        <span className="text-sm font-medium leading-relaxed mt-0.5">{item.text}</span>
                                     </a>
                                 </li>
-                                <li className="flex items-center space-x-3">
-                                    <Phone size={18} className="flex-shrink-0 text-slate-500" />
-                                    <a
-                                        href="tel:+918590456430"
-                                        className="hover:text-slate-900 transition-colors duration-200"
-                                    >
-                                        +91 859 0456 430
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                            ))}
+                        </ul>
+                    </motion.div>
+                </motion.div>
 
-                {/* Copyright */}
-                <div className="border-t border-slate-200 pt-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-slate-400">
-                    <p>&copy; {new Date().getFullYear()} Qmexai. All rights reserved.</p>
-                    <div className="flex space-x-6">
-                        <Link to="#" className="hover:text-slate-700 transition-colors duration-200">
+                {/* Divider */}
+                <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent mb-8"></div>
+
+                {/* Bottom Section */}
+                <motion.div
+                    className="flex flex-col sm:flex-row justify-between items-center gap-6"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ once: true }}
+                >
+                    <p className="text-sm text-gray-600 text-center sm:text-left">
+                        &copy; {new Date().getFullYear()} Qmexai. All rights reserved. 
+                    </p>
+                    <div className="flex gap-6 text-sm text-gray-600">
+                        <Link to="#" className="hover:text-green-600 transition-colors duration-300 font-medium">
                             Privacy Policy
                         </Link>
-                        <Link to="#" className="hover:text-slate-700 transition-colors duration-200">
+                        <Link to="#" className="hover:text-green-600 transition-colors duration-300 font-medium">
                             Terms of Service
                         </Link>
                     </div>
-                </div>
-
+                </motion.div>
             </div>
+
+            {/* Gradient Top Border */}
+            <div className="h-1 bg-linear-to-r from-green-600 via-green-500 to-green-700"></div>
         </footer>
     );
 };

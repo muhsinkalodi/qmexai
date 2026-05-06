@@ -33,7 +33,7 @@ function App() {
             className="flex flex-col min-h-screen"
           >
             <Navbar />
-            <main className="flex-grow">
+            <main className="grow">
               <Routes>
                 {/* Base Routes */}
                 <Route path="/" element={<Home />} />

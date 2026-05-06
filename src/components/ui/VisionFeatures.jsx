@@ -42,11 +42,11 @@ const VisionFeatures = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mb-16">
                     <div className="flex items-center space-x-2 text-blue-600 mb-4 font-medium tracking-wide">
-                        <span className="w-8 h-[2px] bg-blue-600"></span>
+                        <span className="w-8 h-0.5 bg-green-600"></span>
                         <span className="uppercase text-sm">Who We Are</span>
                     </div>
                     <h2 className="text-4xl font-bold text-slate-900 mb-6">
-                        Elevate Your Vision with <span className="text-blue-600">Qmexai's</span> Ingenious Solutions.
+                        Elevate Your Vision with <span className="text-green-600">Qmexai's</span> Ingenious Solutions.
                     </h2>
                     <p className="text-slate-600 text-lg max-w-3xl">
                         Embark on a transformative journey with Qmexai, where creativity meets innovation to shape the future of your project.

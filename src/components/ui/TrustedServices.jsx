@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const TrustedServices = () => {
     return (
-        <section className="relative py-24 bg-blue-600 overflow-hidden">
+        <section className="relative py-24 bg-linear-to-r from-green-600 to-green-700 overflow-hidden">
             {/* Topographic Background Pattern - Abstract SVG */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -27,17 +27,17 @@ const TrustedServices = () => {
                         transition={{ duration: 0.6 }}
                         className="text-white"
                     >
-                        <div className="flex items-center space-x-2 text-blue-200 mb-4 font-medium tracking-wide">
-                            <span className="w-8 h-[2px] bg-blue-300"></span>
+                        <div className="flex items-center space-x-2 text-green-100 mb-4 font-medium tracking-wide">
+                            <span className="w-8 h-0.5 bg-green-300"></span>
                             <span className="uppercase text-sm">Trusted Services</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                             Comprehensive AI Software Solutions and More
                         </h2>
-                        <p className="text-blue-100 text-lg mb-6 leading-relaxed">
+                        <p className="text-green-100 text-lg mb-6 leading-relaxed">
                             Elevate your business with our cutting-edge AI software solutions, including AI chatbots, analytics, and automation, alongside our exceptional web design and development.
                         </p>
-                        <p className="text-blue-100 text-lg mb-8 leading-relaxed">
+                        <p className="text-green-100 text-lg mb-8 leading-relaxed">
                             Discover the possibilities with our AI-powered solutions. From intelligent chatbots to advanced data analytics, we've got you covered.
                         </p>
                     </motion.div>
@@ -51,7 +51,7 @@ const TrustedServices = () => {
                         className="relative"
                     >
                         {/* Abstract glow behind the laptop */}
-                        <div className="absolute inset-0 bg-blue-400 blur-3xl opacity-30 rounded-full transform scale-90"></div>
+                        <div className="absolute inset-0 bg-green-400 blur-3xl opacity-30 rounded-full transform scale-90"></div>
 
                         <img
                             src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"

@@ -53,7 +53,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="pt-20 bg-slate-50 min-h-screen relative">
+        <div className="pt-20 bg-white min-h-screen relative">
             <PageHeader
                 title="Contact Us"
                 subtitle="Get In Touch"
@@ -64,12 +64,12 @@ const Contact = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div className="grid lg:grid-cols-2 gap-12 bg-white rounded-2xl shadow-xl overflow-hidden">
                     {/* Contact Info */}
-                    <div className="p-10 bg-primary text-white">
+                    <div className="p-10 bg-linear-to-br from-green-600 to-green-700 text-white">
                         <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
                         <div className="space-y-8">
                             <div className="flex items-start space-x-4">
                                 <div className="p-3 bg-white rounded-lg">
-                                    <MapPin className="w-6 h-6 text-primary" />
+                                    <MapPin className="w-6 h-6 text-green-600" />
                                 </div>
                                 <div>
                                     <p className="font-semibold text-lg">Our Location</p>
@@ -79,7 +79,7 @@ const Contact = () => {
 
                             <div className="flex items-start space-x-4">
                                 <div className="p-3 bg-white rounded-lg">
-                                    <Mail className="w-6 h-6 text-primary" />
+                                    <Mail className="w-6 h-6 text-green-600" />
                                 </div>
                                 <div>
                                     <p className="font-semibold text-lg">Email Us</p>
@@ -89,11 +89,11 @@ const Contact = () => {
 
                             <div className="flex items-start space-x-4">
                                 <div className="p-3 bg-white rounded-lg">
-                                    <Phone className="w-6 h-6 text-primary" />
+                                    <Phone className="w-6 h-6 text-green-600" />
                                 </div>
                                 <div>
                                     <p className="font-semibold text-lg">Call Us</p>
-                                    <p className="text-slate-300 mt-1">+91  859 0456 430<br />Mon-Sat, 9am - 6pm IST</p>
+                                    <p className="text-slate-300 mt-1">+91  944 6186 430<br />Mon-Sat, 9am - 6pm IST</p>
                                 </div>
                             </div>
                         </div>
@@ -210,3 +210,7 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+
+
